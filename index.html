@@ -194,10 +194,12 @@
       margin-left: 6px;
       color: #dcb8ff;
       transition: color 0.2s ease;
+      animation: glowOnce 2s ease-in-out; /* runs on page load */
     }
 
     .speak:hover {
       color: #ffb3ef;
+      transform: scale(1.1) 0.2 ease;
     }
 
     .legend {
@@ -254,6 +256,21 @@
       }
       to {
         transform: rotate(360deg);
+      }
+    }
+
+    @keyframes glowOnce {
+      0% {
+        color: #dcb8ff; /* normal color */
+        text-shadow: 0 0 0 #dcb8ff;
+      }
+      50% {
+        color: #ffb3ef; /* glow color */
+        text-shadow: 0 0 10px #ffb3ef, 0 0 20px #ff7bd0;
+      }
+      100% {
+        color: #dcb8ff; /* back to normal */
+        text-shadow: 0 0 0 #dcb8ff;
       }
     }
 
@@ -570,71 +587,74 @@
   }
 </style>
 
-<script>
-  const bgLayer = document.getElementById("bg-text-layer");
+<!-- <script>
+const bgLayer = document.getElementById("bg-text-layer");
 
-  let mouseX = 0,
-      mouseY = 0,
-      scroll = 0,
-      currentPhrase = "Yve rulez! >:3";
+// Fade base text out after 5 seconds
+setTimeout(() => { 
+    bgLayer.style.opacity = 0.05; 
+}, 5000);
 
-  const phrases = [
-    "Yve rulez! >:3",
-    "Time is your friend.",
-    "Forget the needle, buy the haystack.",
-    "There’s no escaping risk.",
-    "Stay the course.",
-    "Let go of expectations.",
-    "Be kind.",
-    "Everything changes."
-  ];
+let mouseX = 0,
+    mouseY = 0,
+    scroll = 0,
+    currentPhrase = "Yve rulez! >:3";
 
-  function getBaseText() {
-    const ua = navigator.userAgent.toLowerCase();
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    const s = window.scrollY;
-    const now = new Date();
-    const time = now.toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
-    return `Browser: ${ua}
+const phrases = [
+  "Yve rulez! >:3",
+  "Time is your friend.",
+  "Forget the needle, buy the haystack.",
+  "There’s no escaping risk.",
+  "Stay the course.",
+  "Let go of expectations.",
+  "Be kind.",
+  "Everything changes."
+];
+
+function getBaseText() {
+  const ua = navigator.userAgent.toLowerCase();
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  const s = window.scrollY;
+  const now = new Date();
+  const time = now.toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  return `Browser: ${ua}
 Window: ${w}px × ${h}px
 Scroll: ${s}px
 Time: ${time}`;
-  }
+}
 
-  function updateText() {
-    const baseText = getBaseText();
-    bgLayer.textContent = `${baseText}
+function updateText() {
+  const baseText = getBaseText();
+  bgLayer.textContent = `${baseText}
 Cursor: ${mouseX}px, ${mouseY}px
 ${currentPhrase}`;
-  }
+}
 
-  // Cursor tracking (updates smoothly, but doesn’t randomize phrases)
-  document.addEventListener("mousemove", e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    updateText();
-  });
-
-  window.addEventListener("scroll", () => {
-    scroll = window.scrollY;
-    updateText();
-  });
-
-  window.addEventListener("resize", updateText);
-
-  // Random phrase updates every 3–10 seconds
-  function changePhrase() {
-    currentPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-    updateText();
-    const delay = 3000 + Math.random() * 7000;
-    setTimeout(changePhrase, delay);
-  }
-
-  // Start everything
+document.addEventListener("mousemove", e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
   updateText();
-  changePhrase();
-</script>
+});
+
+window.addEventListener("scroll", () => {
+  scroll = window.scrollY;
+  updateText();
+});
+
+window.addEventListener("resize", updateText);
+
+function changePhrase() {
+  currentPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+  updateText();
+  const delay = 3000 + Math.random() * 7000;
+  setTimeout(changePhrase, delay);
+}
+
+updateText();
+changePhrase();
+
+</script> -->
 
 </body>
 </html>
