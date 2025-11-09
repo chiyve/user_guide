@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>@sainteyvette • pronouns & things</title>
+  <title>@sainteyvette • witchy pronouns page</title>
   <style>
     body {
       background-color: #1b1027;
@@ -17,11 +17,11 @@
     }
 
     .container {
-      width: 720px;
-      margin: 40px auto;
-      background-color: rgba(45, 30, 65, 0.85);
+      width: 760px;
+      margin: 50px auto;
+      background-color: rgba(45, 30, 65, 0.9);
       border: 3px double #c9a0dc;
-      padding: 25px;
+      padding: 20px;
       box-shadow: 0 0 12px #a678b5;
     }
 
@@ -30,22 +30,19 @@
       color: #dcb8ff;
       font-size: 2em;
       text-shadow: 2px 2px #2e173f;
+      margin-bottom: 10px;
     }
 
-    .nav {
-      text-align: center;
-      margin-bottom: 25px;
+    .columns {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
-    .nav a {
-      color: #c9a0dc;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-    }
-
-    .nav a:hover {
-      text-decoration: underline;
+    .left, .right {
+      flex: 1;
+      min-width: 300px;
     }
 
     .pronouns-box {
@@ -54,18 +51,22 @@
       padding: 15px;
       text-align: center;
       font-size: 1.1em;
-      margin: 20px 0;
+      margin-bottom: 20px;
     }
 
     .flags {
       text-align: center;
-      margin-top: 10px;
     }
 
     .flags img {
       height: 40px;
       margin: 5px;
       border: 1px solid #c9a0dc;
+      box-shadow: 0 0 4px #c9a0dc;
+    }
+
+    p {
+      line-height: 1.5em;
     }
 
     footer {
@@ -82,39 +83,52 @@
     @keyframes blink {
       50% { opacity: 0; }
     }
+
+    .divider {
+      display: block;
+      margin: 10px auto;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>✨ @sainteyvette ✨</h1>
-    <div class="nav">
-      <a href="#">home</a> | 
-      <a href="#">about</a> | 
-      <a href="#">guestbook</a>
-    </div>
+    <h1>✦ @sainteyvette ✦</h1>
 
-    <div class="pronouns-box">
-      <strong>name:</strong> yvette / yve / vette / yvie <br>
-      <strong>pronouns:</strong> she/her, they/them <br>
-      <strong>vibe:</strong> witchy ✦ nerd ✦ person ✦ thing <br>
-    </div>
+    <div class="columns">
+      <div class="left">
+        <div class="pronouns-box">
+          <strong>name:</strong> yvette / yve / vette / yvie <br>
+          <strong>pronouns:</strong> she/her, they/them <br>
+        </div>
 
-    <div class="flags">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bisexual_Pride_Flag.svg/2560px-Bisexual_Pride_Flag.svg.png" alt="Bisexual flag">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Genderfluidity_Pride-Flag.svg/2560px-Genderfluidity_Pride-Flag.svg.png" alt="Genderfluid flag">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Transgender_Pride_flag.svg/2560px-Transgender_Pride_flag.svg.png" alt="Transgender flag">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Bigender_pride_flag.svg/2560px-Bigender_pride_flag.svg.png" alt="Bigender flag">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Androgyne_Pride_Flag.svg/2560px-Androgyne_Pride_Flag.svg.png" alt="Androgyne flag">
-    </div>
+        <div class="flags">
+            <img src="https://cdn.pronouns.page/images/01JYVW3ZE6XJ89W59PMX3631VY-flag.png" alt="Genderfrith flag">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bisexual_Pride_Flag.svg/2560px-Bisexual_Pride_Flag.svg.png" alt="Bisexual flag">
+            <img src="https://en.pronouns.page/flags/Genderfluid.png" alt="Genderfluid flag">
+            <img src="https://en.pronouns.page/flags/Transgender.png" alt="Transgender flag">
+            <img src="https://en.pronouns.page/flags/Bigender.png" alt="Bigender flag">
+            <img src="https://en.pronouns.page/flags/Androgyne.png" alt="Androgyne flag">
+        </div>
+      </div>
 
-    <p style="text-align:center; margin-top:20px;">
-      sup nerd 🧙‍♀️ welcome to my little internet altar.<br>
-      i make magic, memes, and sometimes tea.<br>
-      <img src="https://gifcity.carrd.co/assets/images/gallery14/35070cf8.gif" alt="under construction" width="100">
-    </p>
+      <div class="right">
+        <p>sup nerd. :3<br>
+        this is a test<br>
+        somewhere between lorem and ipsum</p>
+
+        <img class="divider" src="https://pixelsafari.neocities.org/dividers/animal/cat2.gif" alt="divider" width="80%">
+
+        <p>current mood: tired.<br>
+        current soundtrack: Silly Beast by Flickers from the Fen (on repeat) <3</p>
+
+        <p style="text-align:center;">
+          <img src="https://gifcity.carrd.co/assets/images/gallery14/35070cf8.gif" alt="under construction" width="100">
+        </p>
+      </div>
+    </div>
 
     <footer>
-      <p class="blink">© 2022–2025 yvette • powered by ✨witchcraft & GitHub Pages✨</p>
+      <p class="blink">© 2022–2025 yvette • powered by ✨ witchcraft & github pages ✨</p>
     </footer>
   </div>
 </body>
