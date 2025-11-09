@@ -1,30 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Yve (Yvette)">
-<meta property="og:description" content="Yve, also referred to as Yvette, is a humanoid organism with a deep fascination in funky hats, questionable fashion choices, and various auditory anomalies categorized as "quirky noises." Prolonged exposure to Yve results in elevated levels of whimsy and secondhand embarrassment. Current containment procedures involve wrapping Yve in several blankets and calling it a day.">
-<meta property="og:image" content="https://chiyve.github.io/user_guide/media/yve_favicon.png">
-<meta property="og:url" content="https://chiyve.github.io/user_guide/">
-<meta property="og:type" content="website">
-
-<!-- Twitter Card (also used by Discord for large embeds) -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Yve (Yvette)">
-<meta name="twitter:description" content="Yve, also referred to as Yvette, is a humanoid organism with a deep fascination in funky hats, questionable fashion choices, and various auditory anomalies categorized as "quirky noises." Prolonged exposure to Yve results in elevated levels of whimsy and secondhand embarrassment. Current containment procedures involve wrapping Yve in several blankets and calling it a day.">
-<meta name="twitter:image" content="https://chiyve.github.io/user_guide/media/yve_favicon.png">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yve's User Guide!</title>
-  <link rel="icon" href="media/yve_favicon.png" type="image/png"> <!-- favicon added -->
+  <link rel="icon" href="media/yve_favicon.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       background-color: #1b1027;
-      background-image: url('media/mac_os_28.jpg');
-      background-repeat: repeat;
+      background-image: url('media/fur_texture.png'), url('media/mac_os_28.jpg');
+      background-repeat: repeat, repeat;
       color: #e6daf0;
       font-family: Verdana, sans-serif;
       margin: 0;
@@ -33,12 +21,14 @@
     }
 
     .container {
+      position: relative;
       width: 760px;
       margin: 50px auto;
       background-color: rgba(45, 30, 65, 0.9);
       border: 3px double #c9a0dc;
       padding: 20px;
-      box-shadow: 0 0 12px #a678b5;
+      box-shadow: 0 0 12px #a678b5, 0 0 10px #ff7bd0 inset;
+      border-radius: 10px;
     }
 
     h1 {
@@ -56,7 +46,8 @@
       flex-wrap: wrap;
     }
 
-    .left, .right {
+    .left,
+    .right {
       flex: 1;
       min-width: 300px;
     }
@@ -67,6 +58,13 @@
       padding: 15px;
       font-size: 1em;
       margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #a678b5 inset, 0 0 8px #ff7bd0;
+      transition: all 0.3s ease;
+    }
+
+    .section-box:hover {
+      box-shadow: 0 0 15px #ff7bd0, 0 0 12px #a678b5 inset;
     }
 
     .section-box h2 {
@@ -87,6 +85,7 @@
       margin: 5px;
       border: 1px solid #c9a0dc;
       box-shadow: 0 0 4px #c9a0dc;
+      border-radius: 4px;
     }
 
     .word-list {
@@ -99,15 +98,22 @@
     .word {
       background-color: rgba(60, 40, 85, 0.7);
       border: 1px solid #a678b5;
-      border-radius: 4px;
+      border-radius: 8px;
       padding: 4px 10px;
       font-size: 0.9em;
       display: flex;
       align-items: center;
       gap: 6px;
+      transition: all 0.2s ease;
     }
 
-    /* 🌈 Color Logic */
+    .word:hover {
+      background: linear-gradient(135deg, rgba(201, 160, 220, 0.1), rgba(255, 123, 208, 0.1));
+      color: #fff;
+      transform: scale(1.03);
+      border-color: #ff7bd0;
+    }
+
     .word:has(.fa-heart) {
       color: #ff7bd0;
     }
@@ -128,12 +134,25 @@
       color: #9fffcf;
     }
 
-    /* Legend colors to match */
-    .legend i.fa-heart { color: #ff7bd0; }
-    .legend i.fa-face-grin-tongue { color: #ffb3ef; }
-    .legend i.fa-thumbs-up { color: #dcb8ff; }
-    .legend i.fa-thumbs-down { color: #5e4b73; }
-    .legend i.fa-tree { color: #9fffcf; }
+    .legend i.fa-heart {
+      color: #ff7bd0;
+    }
+
+    .legend i.fa-face-grin-tongue {
+      color: #ffb3ef;
+    }
+
+    .legend i.fa-thumbs-up {
+      color: #dcb8ff;
+    }
+
+    .legend i.fa-thumbs-down {
+      color: #5e4b73;
+    }
+
+    .legend i.fa-tree {
+      color: #9fffcf;
+    }
 
     .speak {
       cursor: pointer;
@@ -169,6 +188,7 @@
       padding: 10px 15px;
       margin-bottom: 15px;
       border-radius: 6px;
+      box-shadow: 0 0 6px #a678b5 inset;
     }
 
     .info-block h2 {
@@ -184,14 +204,15 @@
       height: 100px;
       border-radius: 50%;
       border: 2px solid #c9a0dc;
-      box-shadow: 0 0 6px #a678b5;
+      box-shadow: 0 0 12px #ff7bd0;
       display: block;
       margin-bottom: 10px;
     }
 
     .ipa {
-      color: #5e4b73; /* same as 'nope' words */
+      color: #5e4b73;
       font-size: 0.8em;
+      font-style: oblique;
     }
 
     footer {
@@ -202,23 +223,22 @@
     }
 
     @media (max-width: 768px) {
-      html, body {
+      html,
+      body {
         overflow-x: hidden;
       }
 
       body {
-        padding: 0 8px; /* 👈 adds a bit of space to show the glow on sides */
+        padding: 0 8px;
       }
 
       .container {
         width: 100%;
         max-width: 100%;
-        margin: 30px auto; /* still lets top/bottom glow show */
-        border: 3px double #c9a0dc; /* keep full glowing border */
+        margin: 30px auto;
+        border: 3px double #c9a0dc;
         box-sizing: border-box;
         padding: 15px;
-        background-color: rgba(45, 30, 65, 0.9);
-        box-shadow: 0 0 12px #a678b5;
       }
 
       .columns {
@@ -226,7 +246,8 @@
         gap: 20px;
       }
 
-      .left, .right {
+      .left,
+      .right {
         width: 100%;
         min-width: 0;
       }
@@ -278,19 +299,19 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Yve's User Guide!</h1>
-    <br>
 
     <div class="columns">
       <div class="left">
         <img src="media/yve_pfp.jpg" alt="Yve's profile picture" class="profile-pic">
         <p>sup nerd. :3<br><br>
-        welcome to my <em>...user guide?</em> i'm not a robot. why did they call it that.</p>
+          welcome to my <em>...user guide?</em> i'm not a robot. why did they call it that.</p>
 
-        <img class="divider" src="https://pixelsafari.neocities.org/dividers/animal/cat2.gif" alt="divider" width="100%">
-        
+        <img class="divider" src="https://pixelsafari.neocities.org/dividers/animal/paw.gif" alt="divider" width="100%">
+
         <div class="section-box">
           <h2>Legend</h2>
           <div class="legend">
@@ -306,24 +327,24 @@
           <h2>Names</h2>
           <div class="word-list">
             <div class="word">
-              <i class="fa-solid fa-heart fa-fw"></i> 
+              <i class="fa-solid fa-heart fa-fw"></i>
               Yvette <span class="ipa">/i.ˈvɛt/</span>
-              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/yvette.mp3" title="Play pronunciation"></i>
+              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/yvette.mp3"></i>
             </div>
             <div class="word">
-              <i class="fa-solid fa-heart fa-fw"></i> 
+              <i class="fa-solid fa-heart fa-fw"></i>
               Yve <span class="ipa">/ˈi.v/</span>
-              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/yve.mp3" title="Play pronunciation"></i>
+              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/yve.mp3"></i>
             </div>
             <div class="word">
-              <i class="fa-solid fa-thumbs-up fa-fw"></i> 
+              <i class="fa-solid fa-thumbs-up fa-fw"></i>
               Vette <span class="ipa">/ˈvɛt/</span>
-              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/vette.mp3" title="Play pronunciation"></i>
+              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/vette.mp3"></i>
             </div>
             <div class="word">
-              <i class="fa-solid fa-tree fa-fw"></i> 
+              <i class="fa-solid fa-tree fa-fw"></i>
               Yvie <span class="ipa">/ˈi.vi/</span>
-              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/yvie.mp3" title="Play pronunciation"></i>
+              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/yvie.mp3"></i>
             </div>
           </div>
         </div>
@@ -338,13 +359,6 @@
             <div class="word"><i class="fa-solid fa-face-grin-tongue fa-fw"></i> Thing</div>
             <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> King</div>
             <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Queen</div>
-            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Bro</div>
-            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Dude</div>
-            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Guy</div>
-            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Boy</div>
-            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Man</div>
-            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Sis</div>
-            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Girl</div>
           </div>
         </div>
 
@@ -364,42 +378,39 @@
         <div class="info-block">
           <h2>about my pronouns</h2>
           <p>i use <strong>she/her</strong> and <strong>they/them</strong>.<br>
-          in queer or trans spaces. <strong>ask me</strong> what set i'm using at that moment.<br><br>
-          in unfamiliar spaces, please use <strong>they/them</strong>. i always use they/them in documentation, or if talking about the past.<br><br>
-          if a queer space happens to also have vietnamese speakers, please use <strong>cô</strong> and <strong>chị</strong> for me.</p>
-        </div>
-            
-        <div class="info-block">
-          <h2>about my gender</h2>
-          <p>i’m <strong>genderfrith!</strong> like 90% of the time i'm pretty much a girl. about 2 times a year i'm a boy. every other second i'm somewhere in between. it absolutely changes with who i'm with and how i feel.<br><br>
-          genderfrith is a subgender of genderfluid which is under the transgender umbrella.</p>
-        </div>
-        
-        <div class="info-block">
-            <h2>Favorites</h2>
-            <div class="word-list">
-                <div class="word"><i class="fa-solid fa-user"></i> Aphex Twin</div>
-                <div class="word"><i class="fa-solid fa-user"></i> C418</div>
-                <div class="word"><i class="fa-solid fa-user"></i> Femtanyl</div>
-                <div class="word"><i class="fa-solid fa-film fa-fw"></i> Parasite</div>
-                <div class="word"><i class="fa-solid fa-film fa-fw"></i> All About Lily Chou-Chou</div>
-                <div class="word"><i class="fa-solid fa-book fa-fw"></i> Who Moved My Cheese?</div>
-                <div class="word"><i class="fa-solid fa-comment-dots"></i> Look Back</div>
-                <div class="word"><i class="fa-solid fa-comment-dots"></i> Girls' Last Tour</div>
-                <div class="word"><i class="fa-solid fa-comment-dots"></i> The Pervert</div>
-                <div class="word"><i class="fa-solid fa-comment-dots"></i> Housepets!</div>
-                <div class="word"><i class="fa-solid fa-comment-dots"></i> xkcd</div>
-                <div class="word"><i class="fa-solid fa-comment-dots"></i> laika's comet</div>
-                <div class="word"><i class="fa-solid fa-gamepad fa-fw"></i> Deltarune</div>
-                <div class="word"><i class="fa-solid fa-gamepad fa-fw"></i> OMORI</div>
-                <div class="word"><i class="fa-solid fa-gamepad fa-fw"></i> Night in the Woods</div>
-            </div>
+            in queer or trans spaces. <strong>ask me</strong> what set i'm using at that moment.<br><br>
+            in unfamiliar spaces, please use <strong>they/them</strong>.<br>
+            if a queer space happens to also have vietnamese speakers, please use <strong>cô</strong> and <strong>chị</strong> for me.</p>
         </div>
 
         <div class="info-block">
-            <h2>other things about me</h2>
-            <p>proud boglehead.<br><br>
-            allergic to pollen, penecillin, peanuts, pecans.</p>
+          <h2>about my gender</h2>
+          <p>i’m <strong>genderfrith!</strong> like 90% of the time i'm pretty much a girl. about 2 times a year i'm a boy. every other second i'm somewhere in between.<br>
+            genderfrith is a subgender of genderfluid which is under the transgender umbrella.</p>
+        </div>
+
+        <div class="info-block"> 
+          <h2>Favorites</h2> 
+          <div class="word-list"> <div class="word"><i class="fa-solid fa-user"></i> Aphex Twin</div> 
+          <div class="word"><i class="fa-solid fa-user"></i> C418</div> 
+          <div class="word"><i class="fa-solid fa-user"></i> Femtanyl</div> 
+          <div class="word"><i class="fa-solid fa-film fa-fw"></i> Parasite</div> 
+          <div class="word"><i class="fa-solid fa-film fa-fw"></i> All About Lily Chou-Chou</div> 
+          <div class="word"><i class="fa-solid fa-book fa-fw"></i> Who Moved My Cheese?</div> 
+          <div class="word"><i class="fa-solid fa-comment-dots"></i> Look Back</div> 
+          <div class="word"><i class="fa-solid fa-comment-dots"></i> Girls' Last Tour</div> 
+          <div class="word"><i class="fa-solid fa-comment-dots"></i> The Pervert</div> 
+          <div class="word"><i class="fa-solid fa-comment-dots"></i> Housepets!</div> 
+          <div class="word"><i class="fa-solid fa-comment-dots"></i> xkcd</div> <div class="word"><i class="fa-solid fa-comment-dots"></i> laika's comet</div> 
+          <div class="word"><i class="fa-solid fa-gamepad fa-fw"></i> Deltarune</div> 
+          <div class="word"><i class="fa-solid fa-gamepad fa-fw"></i> OMORI</div> 
+          <div class="word"><i class="fa-solid fa-gamepad fa-fw"></i> Night in the Woods</div> 
+        </div> 
+        </div>
+
+        <div class="info-block">
+          <h2>other things about me</h2>
+          <p>proud boglehead.<br>allergic to pollen, penecillin, peanuts, pecans.</p>
         </div>
 
       </div>
@@ -411,17 +422,19 @@
   </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-  <script>
-    document.querySelectorAll('.speak').forEach(icon => {
-      icon.addEventListener('click', () => {
-        const audio = new Audio(icon.dataset.audio);
+  // Make entire word box clickable
+  document.querySelectorAll('.word').forEach(word => {
+    word.addEventListener('click', () => {
+      const audioFile = word.querySelector('.speak')?.dataset.audio;
+      if (audioFile) {
+        const audio = new Audio(audioFile);
         audio.play().catch(err => console.warn("Audio play error:", err));
-      });
+      }
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
