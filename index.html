@@ -31,7 +31,28 @@
       font-family: Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym65.ani'), auto;
+
+      cursor: url('media/awesome-face-cursor/Awesome_Face_Normal_(2011_Edition).cur'), auto;
+    }
+
+    /* example: normal, pointer, help, busy */
+    .element {
+        cursor: url('media/awesome-face-cursor/Awesome_Face_Normal_(2011_Edition).cur'), auto;
+    }
+
+    /* Apply to all clickable elements */
+    a,
+    button,
+    input,
+    textarea,
+    label,
+    .word {
+        cursor: url('media/awesome-face-cursor/Awesome_Face_Help_Select_(2011_Edition).cur'), pointer;
+    }
+
+    .word:hover,
+    .word:hover .speak {
+        cursor: url('media/awesome-face-cursor/Awesome_Face_Help_Select_(2011_Edition).cur'), pointer;
     }
 
     .container {
@@ -401,7 +422,7 @@
         </div>
 
         <div class="section-box">
-          <h2>Descriptions</h2>
+          <h2>Social Address</h2>
           <div class="word-list">
             <div class="word">
               <i class="fa-solid fa-heart fa-fw"></i> Nerd
