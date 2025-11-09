@@ -4,7 +4,7 @@
 <!-- Open Graph -->
 <meta property="og:title" content="Yve (Yvette)">
 <meta property="og:description" content="Yve, also referred to as Yvette, is a humanoid organism with a deep fascination with funky hats, questionable fashion choices, and various auditory anomalies categorized as &quot;quirky noises.&quot; Prolonged exposure to Yve results in elevated levels of whimsy and secondhand embarrassment. Current containment procedures involve wrapping Yve in several blankets and calling it a day.">
-<meta property="og:image" content="https://chiyve.github.io/user_guide/media/vinea_smbau.jpg">
+<meta property="og:image" content="https://chiyve.github.io/user_guide/media/vinea_smbau.png">
 <meta property="og:url" content="https://chiyve.github.io/user_guide/">
 <meta property="og:type" content="article">
 
@@ -12,7 +12,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Yve (Yvette)">
 <meta name="twitter:description" content="Yve, also referred to as Yvette, is a humanoid organism with a deep fascination with funky hats, questionable fashion choices, and various auditory anomalies categorized as &quot;quirky noises.&quot; Prolonged exposure to Yve results in elevated levels of whimsy and secondhand embarrassment. Current containment procedures involve wrapping Yve in several blankets and calling it a day.">
-<meta name="twitter:image" content="https://chiyve.github.io/user_guide/media/vinea_smbau.jpg">
+<meta name="twitter:image" content="https://chiyve.github.io/user_guide/media/vinea_smbau.png">
 
 <head>
   <meta charset="UTF-8">
@@ -24,8 +24,9 @@
   <style>
     body {
       background-color: #1b1027;
-      background-image: url('media/fur_texture.png'), url('media/mac_os_28.jpg');
+      background-image: url('media/mac_os_28.jpg');
       background-repeat: repeat, repeat;
+      background-attachment: fixed, fixed; /* 🔹 Fixes background from scrolling */
       color: #e6daf0;
       font-family: Verdana, sans-serif;
       margin: 0;
@@ -213,13 +214,48 @@
     }
 
     .profile-pic {
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       border: 2px solid #c9a0dc;
       box-shadow: 0 0 12px #ff7bd0;
       display: block;
       margin-bottom: 10px;
+      margin-left: 20px;
+      animation: spin 30s ease-in-out infinite; /* speeds up & slows down */
+      transform-origin: center center; /* makes it spin around its middle */
+    }
+
+    /* Spin animation */
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .intro {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      margin: 0;
+      line-height: 1.5;
+      font-size: 1em;
+    }
+
+    /* Make sure image doesn’t blow up on mobile */
+    @media (max-width: 600px) {
+      .intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
     }
 
     .ipa {
@@ -319,9 +355,11 @@
 
     <div class="columns">
       <div class="left">
-        <img src="media/yve_pfp.jpg" alt="Yve's profile picture" class="profile-pic">
-        <p>sup nerd. :3<br><br>
-          welcome to my <em>...user guide?</em> i'm not a robot. why did they call it that.</p>
+        <div class="intro">
+          <img src="media/yve_pfp.jpg" alt="Yve's profile picture" class="profile-pic">
+          <p>sup nerd. :3<br><br>
+            welcome to my <em>...user guide?</em> i'm not a robot. why did they call it that.</p>
+        </div>
 
         <img class="divider" src="https://pixelsafari.neocities.org/dividers/animal/cat2.gif" alt="divider" width="100%">
 
