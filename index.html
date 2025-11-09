@@ -135,6 +135,17 @@
     .legend i.fa-thumbs-down { color: #5e4b73; }
     .legend i.fa-tree { color: #9fffcf; }
 
+    .speak {
+      cursor: pointer;
+      margin-left: 6px;
+      color: #dcb8ff;
+      transition: color 0.2s ease;
+    }
+
+    .speak:hover {
+      color: #ffb3ef;
+    }
+
     .legend {
       font-size: 0.9em;
       margin-top: 10px;
@@ -176,6 +187,11 @@
       box-shadow: 0 0 6px #a678b5;
       display: block;
       margin-bottom: 10px;
+    }
+
+    .ipa {
+      color: #5e4b73; /* same as 'nope' words */
+      font-size: 0.8em;
     }
 
     footer {
@@ -289,10 +305,26 @@
         <div class="section-box">
           <h2>Names</h2>
           <div class="word-list">
-            <div class="word"><i class="fa-solid fa-heart fa-fw"></i> Yvette / i.ˈvɛt/</div>
-            <div class="word"><i class="fa-solid fa-heart fa-fw"></i> Yve /ˈi.v/</div>
-            <div class="word"><i class="fa-solid fa-thumbs-up fa-fw"></i> Vette /ˈvɛt/</div>
-            <div class="word"><i class="fa-solid fa-tree fa-fw"></i> Yvie /ˈi.vi/</div>
+            <div class="word">
+              <i class="fa-solid fa-heart fa-fw"></i> 
+              Yvette <span class="ipa">/i.ˈvɛt/</span>
+              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/yvette.mp3" title="Play pronunciation"></i>
+            </div>
+            <div class="word">
+              <i class="fa-solid fa-heart fa-fw"></i> 
+              Yve <span class="ipa">/ˈi.v/</span>
+              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/yve.mp3" title="Play pronunciation"></i>
+            </div>
+            <div class="word">
+              <i class="fa-solid fa-thumbs-up fa-fw"></i> 
+              Vette <span class="ipa">/ˈvɛt/</span>
+              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/vette.mp3" title="Play pronunciation"></i>
+            </div>
+            <div class="word">
+              <i class="fa-solid fa-tree fa-fw"></i> 
+              Yvie <span class="ipa">/ˈi.vi/</span>
+              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/yvie.mp3" title="Play pronunciation"></i>
+            </div>
           </div>
         </div>
 
@@ -332,7 +364,7 @@
         <div class="info-block">
           <h2>about my pronouns</h2>
           <p>i use <strong>she/her</strong> and <strong>they/them</strong>.<br>
-          in queer or trans spaces, <strong>ask me</strong> what set i'm using at that moment.<br><br>
+          in queer or trans spaces. <strong>ask me</strong> what set i'm using at that moment.<br><br>
           in unfamiliar spaces, please use <strong>they/them</strong>.<br><br>
           if a queer space happens to also have vietnamese speakers, please use <strong>cô</strong> and <strong>chị</strong> for me.</p>
         </div>
@@ -381,5 +413,15 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  <script>
+    document.querySelectorAll('.speak').forEach(icon => {
+      icon.addEventListener('click', () => {
+        const audio = new Audio(icon.dataset.audio);
+        audio.play().catch(err => console.warn("Audio play error:", err));
+      });
+    });
+  </script>
+
 </body>
 </html>
