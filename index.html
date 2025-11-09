@@ -471,5 +471,64 @@
   });
 </script>
 
+<!-- Background Text Layer -->
+<div id="bg-text-layer"></div>
+
+<style>
+  #bg-text-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* allow clicks through */
+    z-index: -1; /* behind everything */
+    font-family: "Courier New", Courier, monospace; /* monospace font */
+    font-size: 50px; /* bigger */
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.2); /* subtle white */
+    white-space: pre-wrap; /* wrap text instead of overflowing */
+    line-height: 1.2em;
+    padding: 20px;
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  const bgLayer = document.getElementById('bg-text-layer');
+
+  let mouseX = 0, mouseY = 0;
+
+  function updateText() {
+    const ua = navigator.userAgent;
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const x = mouseX;
+    const y = mouseY;
+    const scroll = window.scrollY;
+
+    const textContent = 
+`Browser: ${ua}
+Window: ${w}px x ${h}px
+Cursor: ${x}px, ${y}px
+Scroll: ${scroll}px
+Yve rulez! >:3`;
+
+    bgLayer.textContent = textContent;
+  }
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    updateText();
+  });
+
+  window.addEventListener('scroll', updateText);
+  window.addEventListener('resize', updateText);
+
+  updateText();
+</script>
+
+
 </body>
 </html>
