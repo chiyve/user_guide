@@ -654,6 +654,17 @@ function changePhrase() {
 updateText();
 changePhrase();
 
+  const defaultTitle = "Yve's User Guide!"; // normal title
+  const awayTitle = "SUMMON FIREBALL!"; // shows when they switch tabs
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      document.title = awayTitle;
+    } else {
+      document.title = defaultTitle;
+    }
+  });
+
 </script>
 
 </body>
