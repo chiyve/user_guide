@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>@sainteyvette • witchy pronouns page</title>
+  <title>Yve's User Guide!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       background-color: #1b1027;
-      background-image: url('https://sadhost.neocities.org/images/bg-stars.gif');
+      background-image: url('media/mac_os_28.jpg');
       background-repeat: repeat;
       color: #e6daf0;
       font-family: Verdana, sans-serif;
@@ -45,13 +46,21 @@
       min-width: 300px;
     }
 
-    .pronouns-box {
+    .section-box {
       border: 2px dotted #b085c5;
       background-color: rgba(70, 50, 90, 0.8);
       padding: 15px;
-      text-align: center;
-      font-size: 1.1em;
+      font-size: 1em;
       margin-bottom: 20px;
+    }
+
+    .section-box h2 {
+      margin-top: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #dcb8ff;
+      font-size: 1em;
+      text-align: center;
     }
 
     .flags {
@@ -65,8 +74,93 @@
       box-shadow: 0 0 4px #c9a0dc;
     }
 
-    p {
-      line-height: 1.5em;
+    .word-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .word {
+      background-color: rgba(60, 40, 85, 0.7);
+      border: 1px solid #a678b5;
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-size: 0.9em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 🌈 Color Logic */
+    .word:has(.fa-heart) {
+      color: #ff7bd0;
+    }
+
+    .word:has(.fa-face-grin-tongue) {
+      color: #ffb3ef;
+    }
+
+    .word:has(.fa-thumbs-up) {
+      color: #dcb8ff;
+    }
+
+    .word:has(.fa-thumbs-down) {
+      color: #5e4b73;
+    }
+
+    .word:has(.fa-tree) {
+      color: #9fffcf;
+    }
+
+    /* Legend colors to match */
+    .legend i.fa-heart { color: #ff7bd0; }
+    .legend i.fa-face-grin-tongue { color: #ffb3ef; }
+    .legend i.fa-thumbs-up { color: #dcb8ff; }
+    .legend i.fa-thumbs-down { color: #5e4b73; }
+    .legend i.fa-tree { color: #9fffcf; }
+
+    .legend {
+      font-size: 0.9em;
+      margin-top: 10px;
+      padding-top: 8px;
+      text-align: center;
+    }
+
+    .legend span {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .divider {
+      display: block;
+      margin: 10px auto;
+    }
+
+    .info-block {
+      border: 1px solid #a678b5;
+      background-color: rgba(60, 40, 85, 0.7);
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+    }
+
+    .info-block h2 {
+      font-size: 1em;
+      color: #dcb8ff;
+      margin-top: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid #c9a0dc;
+      box-shadow: 0 0 6px #a678b5;
+      display: block;
+      margin-bottom: 10px;
     }
 
     footer {
@@ -75,61 +169,102 @@
       margin-top: 30px;
       color: #d1b6e0;
     }
-
-    .blink {
-      animation: blink 1s step-start infinite;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
-
-    .divider {
-      display: block;
-      margin: 10px auto;
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>✦ @sainteyvette ✦</h1>
+    <h1>Yve's User Guide!</h1>
+    <br>
 
     <div class="columns">
       <div class="left">
-        <div class="pronouns-box">
-          <strong>name:</strong> yvette / yve / vette / yvie <br>
-          <strong>pronouns:</strong> she/her, they/them <br>
+        <img src="media/yve_pfp.jpg" alt="Yve's profile picture" class="profile-pic">
+        <p>sup nerd. :3<br><br>
+        welcome to my <em>...user guide?</em> i'm not a robot. why did they call it that.</p>
+
+        <img class="divider" src="https://pixelsafari.neocities.org/dividers/animal/cat2.gif" alt="divider" width="100%">
+        
+        <div class="section-box">
+          <h2>Legend</h2>
+          <div class="legend">
+            <span><i class="fa-solid fa-heart fa-fw"></i>= Yes</span>
+            <span><i class="fa-solid fa-thumbs-up fa-fw"></i>= Okay</span>
+            <span><i class="fa-solid fa-face-grin-tongue fa-fw"></i>= Jokingly</span>
+            <span><i class="fa-solid fa-thumbs-down fa-fw"></i>= Nope</span>
+            <span><i class="fa-solid fa-tree fa-fw"></i>= Close Friends</span>
+          </div>
+        </div>
+
+        <div class="section-box">
+          <h2>Names</h2>
+          <div class="word-list">
+            <div class="word"><i class="fa-solid fa-heart fa-fw"></i> Yvette / i.ˈvɛt/</div>
+            <div class="word"><i class="fa-solid fa-heart fa-fw"></i> Yve /ˈi.v/</div>
+            <div class="word"><i class="fa-solid fa-thumbs-up fa-fw"></i> Vette /ˈvɛt/</div>
+            <div class="word"><i class="fa-solid fa-tree fa-fw"></i> Yvie /ˈi.vi/</div>
+          </div>
+        </div>
+
+        <div class="section-box">
+          <h2>Descriptions</h2>
+          <div class="word-list">
+            <div class="word"><i class="fa-solid fa-heart fa-fw"></i> Nerd</div>
+            <div class="word"><i class="fa-solid fa-heart fa-fw"></i> Dork</div>
+            <div class="word"><i class="fa-solid fa-heart fa-fw"></i> Dawg</div>
+            <div class="word"><i class="fa-solid fa-thumbs-up fa-fw"></i> Person</div>
+            <div class="word"><i class="fa-solid fa-face-grin-tongue fa-fw"></i> Thing</div>
+            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> King</div>
+            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Queen</div>
+            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Bro</div>
+            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Dude</div>
+            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Guy</div>
+            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Boy</div>
+            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Man</div>
+            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Sis</div>
+            <div class="word"><i class="fa-solid fa-thumbs-down fa-fw"></i> Girl</div>
+          </div>
         </div>
 
         <div class="flags">
-            <img src="https://cdn.pronouns.page/images/01JYVW3ZE6XJ89W59PMX3631VY-flag.png" alt="Genderfrith flag">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bisexual_Pride_Flag.svg/2560px-Bisexual_Pride_Flag.svg.png" alt="Bisexual flag">
-            <img src="https://en.pronouns.page/flags/Genderfluid.png" alt="Genderfluid flag">
-            <img src="https://en.pronouns.page/flags/Transgender.png" alt="Transgender flag">
-            <img src="https://en.pronouns.page/flags/Bigender.png" alt="Bigender flag">
-            <img src="https://en.pronouns.page/flags/Androgyne.png" alt="Androgyne flag">
+          <img src="https://cdn.pronouns.page/images/01JYVW3ZE6XJ89W59PMX3631VY-flag.png" alt="Genderfrith flag" title="Genderfrith">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bisexual_Pride_Flag.svg/2560px-Bisexual_Pride_Flag.svg.png" alt="Bisexual flag" title="Bisexual">
+          <img src="https://en.pronouns.page/flags/Genderfluid.png" alt="Genderfluid flag" title="Genderfluid">
+          <img src="https://en.pronouns.page/flags/Transgender.png" alt="Transgender flag" title="Transgender">
+          <img src="https://en.pronouns.page/flags/Bigender.png" alt="Bigender flag" title="Bigender">
+          <img src="https://en.pronouns.page/flags/Androgyne.png" alt="Androgyne flag" title="Androgyne">
+          <img src="https://static.wikia.nocookie.net/gender/images/2/26/Futch_by_pride_flags_dbzmz7k-pre.jpg/revision/latest/scale-to-width-down/1000?cb=20240505044646" alt="Futch flag" title="Futch">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Femboy_flag.svg/512px-Femboy_flag.svg.png" alt="Femboy flag" title="Femboy">
         </div>
       </div>
 
       <div class="right">
-        <p>sup nerd. :3<br>
-        this is a test<br>
-        somewhere between lorem and ipsum</p>
+        <div class="info-block">
+          <h2>about my pronouns</h2>
+          <p>i use <strong>she/her</strong> and <strong>they/them</strong>.<br>
+          in queer or trans spaces, <strong>ask me</strong> what set i'm using at that moment.<br><br>
+          in unfamiliar spaces, please use <strong>they/them</strong>.</p>
+        </div>
+            
+        <div class="info-block">
+          <h2>about my gender</h2>
+          <p>i’m <strong>genderfrith!</strong> maybe 90% of the time i'm pretty much a girl. about 2 times a year i'm a boy. every other hour i'm somewhere in between. it absolutely changes with who i'm with and how i feel.<br><br>
+          genderfrith is a subgender of genderfluid which is under the transgender umbrella.</p>
+        </div>
 
-        <img class="divider" src="https://pixelsafari.neocities.org/dividers/animal/cat2.gif" alt="divider" width="80%">
-
-        <p>current mood: tired.<br>
-        current soundtrack: Silly Beast by Flickers from the Fen (on repeat) <3</p>
-
-        <p style="text-align:center;">
-          <img src="https://gifcity.carrd.co/assets/images/gallery14/35070cf8.gif" alt="under construction" width="100">
-        </p>
+        <div class="info-block">
+          <h2>other things about me</h2>
+          <p>proud boglehead.</p>
+        </div>
       </div>
     </div>
 
     <footer>
-      <p class="blink">© 2022–2025 yvette • powered by ✨ witchcraft & github pages ✨</p>
+      <p>© 2022–<span id="year"></span> yvette • powered by github pages & determination</p>
     </footer>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
