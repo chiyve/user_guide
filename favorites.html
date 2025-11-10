@@ -241,19 +241,6 @@
       letter-spacing: 1px;
     }
 
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 2px solid #c9a0dc;
-      box-shadow: 0 0 12px #ff7bd0;
-      display: block;
-      margin-bottom: 10px;
-      margin-left: 20px;
-      animation: spin 30s ease-in-out infinite; /* speeds up & slows down */
-      transform-origin: center center; /* makes it spin around its middle */
-    }
-
     /* Spin animation */
     @keyframes spin {
       from {
@@ -362,13 +349,6 @@
         max-width: 100%;
       }
 
-      .profile-pic {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 10px;
-        display: block;
-      }
-
       h1 {
         font-size: 1.5em;
       }
@@ -398,13 +378,13 @@
 
     <div class="columns">
       <div class="left">
-        <div class="intro">
-          <img src="media/yve_pfp.jpg" alt="Yve's profile picture" class="profile-pic">
-          <p>sup nerd. :3<br><br>
-            welcome to my <em>...user guide?</em> i'm not a robot. why did they call it that.</p>
+        <div class="intro" style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
+          <a href="index.html" 
+            style="color:#ffb3ef; font-size:0.9em; text-decoration:underline; opacity:0.8; transition:opacity 0.3s;">
+            ← take me home!
+          </a>
+          <p style="margin: 0;">MORE favorites? why are they consumed by greed bro.</p>
         </div>
-
-        <img class="divider" src="https://pixelsafari.neocities.org/dividers/animal/cat2.gif" alt="divider" width="100%">
 
         <div class="section-box">
           <h2>Legend</h2>
@@ -666,7 +646,7 @@ updateText();
 changePhrase();
 
   const defaultTitle = "Yve's User Guide!"; // normal title
-  const awayTitle = "I CAST FIREBALL UPON THEE!"; // shows when they switch tabs
+  const awayTitle = "TEMPORAL SHUNT!!!"; // shows when they switch tabs
 
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
