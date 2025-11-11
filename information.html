@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Yve">
+<meta property="og:description" content="Yve, is a humanoid organism with a deep fascination with funky hats, questionable fashion choices, and various auditory anomalies categorized as &quot;quirky noises.&quot; Prolonged exposure to Yve results in elevated levels of whimsy and secondhand embarrassment. Current containment procedures involve wrapping Yve in several blankets and calling it a day.">
+<meta property="og:image" content="https://chiyve.github.io/user_guide/media/vinea_smbau.png">
+<meta property="og:url" content="https://chiyve.github.io/user_guide/">
+<meta property="og:type" content="article">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yve (Yvette)">
+<meta name="twitter:description" content="Yve, is a humanoid organism with a deep fascination with funky hats, questionable fashion choices, and various auditory anomalies categorized as &quot;quirky noises.&quot; Prolonged exposure to Yve results in elevated levels of whimsy and secondhand embarrassment. Current containment procedures involve wrapping Yve in several blankets and calling it a day.">
+<meta name="twitter:image" content="https://chiyve.github.io/user_guide/media/vinea_smbau.png">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yve's User Guide!</title>
+  <link rel="icon" href="media/yve_favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      background-color: #1b1027;
+      background-image: url('media/mac_os_28.jpg');
+      background-repeat: repeat, repeat;
+      background-attachment: fixed, fixed; /* 🔹 Fixes background from scrolling */
+      color: #e6daf0;
+      font-family: Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+
+      cursor: url('media/awesome-face-cursor/Awesome_Face_Normal_(2011_Edition).cur'), auto;
+    }
+
+    /* example: normal, pointer, help, busy */
+    .element {
+        cursor: url('media/awesome-face-cursor/Awesome_Face_Normal_(2011_Edition).cur'), auto;
+    }
+
+    /* Apply to all clickable elements */
+    a,
+    button,
+    input,
+    textarea,
+    label,
+    .word {
+        cursor: url('media/awesome-face-cursor/Awesome_Face_Help_Select_(2011_Edition).cur'), pointer;
+    }
+
+    .word:hover,
+    .word:hover .speak {
+        cursor: url('media/awesome-face-cursor/Awesome_Face_Help_Select_(2011_Edition).cur'), pointer;
+    }
+
+    .container {
+      position: relative;
+      width: 760px;
+      margin: 50px auto;
+      background-color: rgba(45, 30, 65, 0.9);
+      border: 3px double #c9a0dc;
+      padding: 20px;
+      box-shadow: 0 0 12px #a678b5, 0 0 10px #ff7bd0 inset;
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #dcb8ff;
+      font-size: 2em;
+      text-shadow: 2px 2px #2e173f;
+      margin-bottom: 10px;
+    }
+
+    .columns {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .left,
+    .right {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .section-box {
+      border: 2px dotted #b085c5;
+      background-color: rgba(70, 50, 90, 0.8);
+      padding: 15px;
+      font-size: 1em;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #a678b5 inset, 0 0 8px #ff7bd0;
+      transition: all 0.3s ease;
+    }
+
+    .section-box:hover {
+      box-shadow: 0 0 15px #ff7bd0, 0 0 12px #a678b5 inset;
+    }
+
+    .section-box h2 {
+      margin-top: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #dcb8ff;
+      font-size: 1em;
+      text-align: center;
+    }
+
+    .flags {
+      text-align: center;
+    }
+
+    /* .flags img {
+      width: 64px;     
+      height: 40px;       
+      object-fit: cover;  
+      border: 1px solid #c9a0dc;
+      box-shadow: 0 0 4px #c9a0dc;
+      border-radius: 4px;
+    } 
+    */
+
+    .flags img { height: 40px; margin: 5px; border: 1px solid #c9a0dc; box-shadow: 0 0 4px #c9a0dc; border-radius: 4px; }
+
+    .word-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* center alignment */
+      gap: 10px;
+    }
+
+    .word {
+      background-color: rgba(60, 40, 85, 0.7);
+      border: 1px solid #a678b5;
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: 0.9em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .word:hover {
+      background: linear-gradient(135deg, rgba(201, 160, 220, 0.1), rgba(255, 123, 208, 0.1));
+      color: #fff;
+      transform: scale(1.03);
+      border-color: #ff7bd0;
+    }
+
+    .word:has(.fa-heart) {
+      color: #ff7bd0;
+    }
+
+    .word:has(.fa-face-grin-tongue) {
+      color: #ffb3ef;
+    }
+
+    .word:has(.fa-thumbs-up) {
+      color: #dcb8ff;
+    }
+
+    .word:has(.fa-thumbs-down) {
+      color: #5e4b73;
+    }
+
+    .word:has(.fa-tree) {
+      color: #9fffcf;
+    }
+
+    .legend i.fa-heart {
+      color: #ff7bd0;
+    }
+
+    .legend i.fa-face-grin-tongue {
+      color: #ffb3ef;
+    }
+
+    .legend i.fa-thumbs-up {
+      color: #dcb8ff;
+    }
+
+    .legend i.fa-thumbs-down {
+      color: #5e4b73;
+    }
+
+    .legend i.fa-tree {
+      color: #9fffcf;
+    }
+
+    .speak {
+      cursor: pointer;
+      margin-left: 6px;
+      color: #dcb8ff;
+      transition: color 0.2s ease;
+      animation: glowOnce 2s ease-in-out; /* runs on page load */
+    }
+
+    .speak:hover {
+      color: #ffb3ef;
+      transform: scale(1.1) 0.2 ease;
+    }
+
+    .legend {
+      font-size: 0.9em;
+      margin-top: 10px;
+      padding-top: 8px;
+      text-align: center;
+    }
+
+    .legend span {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .divider {
+      display: block;
+      margin: 10px auto;
+    }
+
+    a:hover {
+      opacity: 1;
+      text-decoration: underline wavy #ffb3ef;
+    }
+
+    .info-block {
+      border: 1px solid #a678b5;
+      background-color: rgba(60, 40, 85, 0.7);
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      box-shadow: 0 0 6px #a678b5 inset;
+    }
+
+    .info-block h2 {
+      font-size: 1em;
+      color: #dcb8ff;
+      margin-top: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 2px solid #c9a0dc;
+      box-shadow: 0 0 12px #ff7bd0;
+      display: block;
+      margin-bottom: 10px;
+      margin-left: 20px;
+      animation: spin 30s ease-in-out infinite; /* speeds up & slows down */
+      transform-origin: center center; /* makes it spin around its middle */
+    }
+
+    /* Spin animation */
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes glowOnce {
+      0% {
+        color: #dcb8ff; /* normal color */
+        text-shadow: 0 0 0 #dcb8ff;
+      }
+      50% {
+        color: #ffb3ef; /* glow color */
+        text-shadow: 0 0 10px #ffb3ef, 0 0 20px #ff7bd0;
+      }
+      100% {
+        color: #dcb8ff; /* back to normal */
+        text-shadow: 0 0 0 #dcb8ff;
+      }
+    }
+
+    .intro {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      margin: 0;
+      line-height: 1.5;
+      font-size: 1em;
+    }
+
+    /* Make sure image doesn’t blow up on mobile */
+    @media (max-width: 600px) {
+      .intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .ipa {
+      color: #aa92c3;
+      font-size: 0.8em;
+      font-style: oblique;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8em;
+      margin-top: 30px;
+      color: #d1b6e0;
+    }
+
+    @media (max-width: 768px) {
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      body {
+        padding: 0 8px;
+      }
+
+      .container {
+        position: relative;
+        width: 100%; /* full width */
+        max-width: 100%; /* ensures it doesn’t get constrained */
+        margin: 0 auto; /* optional, keeps it centered if smaller screens */
+        background-color: rgba(45, 30, 65, 0.9);
+        border: 3px double #c9a0dc;
+        padding: 20px;
+        box-shadow: 0 0 12px #a678b5, 0 0 10px #ff7bd0 inset;
+        border-radius: 0; /* optional: remove rounding for full width look */
+        box-sizing: border-box; /* ensures padding is included in width */
+      }
+
+      .columns {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .left,
+      .right {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .section-box,
+      .info-block {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .divider {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+      }
+
+      .flags img {
+        height: 28px;
+        margin: 2px;
+        max-width: 100%;
+      }
+
+      .profile-pic {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 10px;
+        display: block;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .section-box {
+        padding: 10px;
+        font-size: 0.9em;
+      }
+
+      .word-list .word {
+        font-size: 0.85em;
+        padding: 3px 8px;
+        word-break: break-word;
+      }
+
+      footer {
+        font-size: 0.75em;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Yve's User Guide!</h1><br>
+        <div class="intro">
+          <img src="media/yve_pfp.jpg" alt="Yve's profile picture" class="profile-pic">
+          <p>you got sent this because you asked for my name... spooky.<br><br>
+               my pronouns are <strong>they/them</strong>. thanks for using them! :)</p>
+        </div>
+
+        <img class="divider" src="https://pixelsafari.neocities.org/dividers/animal/cat2.gif" alt="divider" width="100%">
+
+        <div class="section-box">
+          <h2>Names</h2>
+          <p style="text-align:center; color:#e6daf0; font-size:0.9em;">
+            Click the <i class="fa-solid fa-volume-high fa-fw"></i> speaker icon to hear how my name is pronounced!
+          </p>
+          <div class="word-list">
+            <div class="word">
+              Yvette <span class="ipa">/i.ˈvɛt/</span>
+              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/yvette.mp3"></i>
+            </div>
+            <div class="word">
+              Yve <span class="ipa">/ˈi.v/</span>
+              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/yve.mp3"></i>
+            </div>
+            <div class="word">
+              Vette <span class="ipa">/ˈvɛt/</span>
+              <i class="fa-solid fa-volume-high fa-fw speak" data-audio="media/vette.mp3"></i>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <footer>
+      <p>Copyright © <span id="year"></span> Yve • powered by a cat chasing a laser</p>
+    </footer>
+  </div>
+
+  <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Make entire word box clickable
+  document.querySelectorAll('.word').forEach(word => {
+    word.addEventListener('click', () => {
+      const audioFile = word.querySelector('.speak')?.dataset.audio;
+      if (audioFile) {
+        const audio = new Audio(audioFile);
+        audio.play().catch(err => console.warn("Audio play error:", err));
+      }
+    });
+  });
+</script>
+
+<!-- Background Text Layer -->
+<div id="bg-text-layer"></div>
+
+<style>
+  #bg-text-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* allow clicks through */
+    z-index: -1; /* behind everything */
+    font-family: "Courier New", Courier, monospace;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1);
+    white-space: pre-wrap;
+    line-height: 1.2em;
+    padding: 20px;
+    overflow: hidden;
+    transition: opacity 0.3s ease-out, color 0.5s ease-in;
+  }
+</style>
+
+<script>
+const bgLayer = document.getElementById("bg-text-layer");
+
+// Fade base text out after 5 seconds
+// setTimeout(() => { 
+//     bgLayer.style.opacity = 0.05; 
+// }, 5000);
+
+let mouseX = 0,
+    mouseY = 0,
+    scroll = 0,
+    currentPhrase = "Yve rulez! >:3";
+
+const phrases = [
+  "Yve rulez! >:3",
+  "Time is your friend.",
+  "Forget the needle, buy the haystack.",
+  "There’s no escaping risk.",
+  "Stay the course.",
+  "Let go of expectations.",
+  "Be kind.",
+  "Everything changes."
+];
+
+function getBaseText() {
+  const ua = navigator.userAgent.toLowerCase();
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  const s = window.scrollY;
+  const now = new Date();
+  const time = now.toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  return `Browser: ${ua}
+Window: ${w}px × ${h}px
+Scroll: ${s}px
+Time: ${time}`;
+}
+
+function updateText() {
+  const baseText = getBaseText();
+  bgLayer.textContent = `${baseText}
+Cursor: ${mouseX}px, ${mouseY}px
+${currentPhrase}`;
+}
+
+document.addEventListener("mousemove", e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  updateText();
+});
+
+window.addEventListener("scroll", () => {
+  scroll = window.scrollY;
+  updateText();
+});
+
+window.addEventListener("resize", updateText);
+
+function changePhrase() {
+  currentPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+  updateText();
+  const delay = 3000 + Math.random() * 7000;
+  setTimeout(changePhrase, delay);
+}
+
+updateText();
+changePhrase();
+
+  const defaultTitle = "Yve's User Guide!"; // normal title
+  const awayTitle = "Heyo :3"; // shows when they switch tabs
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      document.title = awayTitle;
+    } else {
+      document.title = defaultTitle;
+    }
+  });
+
+</script>
+
+</body>
+</html>
